@@ -21,6 +21,7 @@ export class CurrencyListComponent implements OnInit {
   filterValue: string;
   fitlerResult: Currency[] = [];
   maxSize = 15;
+  isLoading = true ;
 
   constructor(private currencyService: CurrencyService) {
   }
@@ -40,6 +41,7 @@ export class CurrencyListComponent implements OnInit {
       page++;
     }
     forkJoin(query).subscribe(results => {
+      this.isLoading = false;
       for (const i in results) {
         this.currencies = this.currencies.concat(results[i].data);
       }

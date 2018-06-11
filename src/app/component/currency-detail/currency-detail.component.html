@@ -1,16 +1,22 @@
-<h2 *ngIf="currency">{{currency.data.id}}</h2>
-<ul *ngIf="currency">
-  <li>Code : {{currency.data.attributes.code}}</li>
-  <li>Name : {{currency.data.attributes.name}}</li>
-  <li>currency_type : {{currency.data.attributes.currency_type}}</li>
-  <li>code_estandards_alpha : {{currency.data.attributes.code_estandards_alpha}}</li>
-  <li>code_jsons_alpha : {{currency.data.attributes.code_jsons_alpha}}</li>
-  <li>symbol : {{currency.data.attributes.symbol}}</li>
-  <li>native_symbol : {{currency.data.attributes.native_symbol}}</li>
-  <li>exponent : {{currency.data.attributes.exponent}}</li>
-  <li>created : {{currency.data.attributes.created | date}}</li>
-  <li>parent_currency_multiplier : {{currency.data.attributes.parent_currency_multiplier}}</li>
-  <li>category : {{currency.data.attributes.category}}</li>
-  <li>updated : {{currency.data.attributes.updated}}</li>
-  <li>issuer : {{currency.data.attributes.issuer}}</li>
-</ul>
+<button (click)="goBack()" class="glyphicon glyphicon-chevron-left">Back</button>
+
+<div class="loader" *ngIf="isLoading"></div>
+
+<div *ngIf="!isLoading">
+  <h2 *ngIf="currency">{{currency.data.id}}</h2>
+  <ul *ngIf="currency">
+    <li>Code : {{currency.data.attributes.code}}</li>
+    <li>Name : {{currency.data.attributes.name}}</li>
+    <li>currency_type : {{currency.data.attributes.currency_type}}</li>
+    <li>code_estandards_alpha : {{currency.data.attributes.code_estandards_alpha}}</li>
+    <li>code_jsons_alpha : {{currency.data.attributes.code_jsons_alpha}}</li>
+    <li>symbol : {{currency.data.attributes.symbol}}</li>
+    <li>native_symbol : {{currency.data.attributes.native_symbol}}</li>
+    <li>exponent : {{currency.data.attributes.exponent}}</li>
+    <li>created : {{currency.data.attributes.created | date}}</li>
+    <li>parent_currency_multiplier : {{currency.data.attributes.parent_currency_multiplier}}</li>
+    <li>category : {{currency.data.attributes.category}}</li>
+    <li>updated : {{currency.data.attributes.updated | date}}</li>
+    <li>issuer : {{currency.data.attributes.issuer}}</li>
+  </ul>
+</div>

@@ -1,5 +1,5 @@
 
-
+<h1> Available currencies</h1>
 total : {{fitlerResult.length}}
 <div class="row">
   <div class="col-4">
@@ -16,12 +16,16 @@ total : {{fitlerResult.length}}
     </div>
   </div>
 </div>
-<div class="row result-row">
+<div class="row">
+  <div class="loader" *ngIf="isLoading"> </div>
+</div>
+<div class="row result-row" *ngIf="!isLoading">
   <div class="col-12">
     <ul class="list-inline">
       <li  *ngFor="let currecy of currenciesPaged; index as ir"
            class="list-inline-item  list-inline-item-currency"
-           routerLink="/currency/{{currecy.id}}">
+           routerLink="/currency/{{currecy.id}}"
+            >
         ID: {{currecy.id}} Type: {{currecy.type}} Symbol: {{currecy.attributes.symbol}}
       </li>
     </ul>

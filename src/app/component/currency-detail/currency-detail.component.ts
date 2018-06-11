@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CurrencyService} from '../../service/currency.service';
 import {ActivatedRoute} from '@angular/router';
 import {CurrencyDetail} from '../../class/currency-detail';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-currency-detail',
@@ -11,11 +12,12 @@ import {CurrencyDetail} from '../../class/currency-detail';
 export class CurrencyDetailComponent implements OnInit {
 
   currency: CurrencyDetail;
-
+  isLoading = true;
 
   constructor(
     private route: ActivatedRoute,
-    private currencyService: CurrencyService
+    private currencyService: CurrencyService,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -25,7 +27,14 @@ export class CurrencyDetailComponent implements OnInit {
   getCurrecy(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.currencyService.getCurrency(id)
-      .subscribe(currencyDetail => this.currency = currencyDetail);
+      .subscribe(currencyDetail => {
+        this.currency = currencyDetail;
+        this.isLoading = false;
+      });
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

@@ -4,14 +4,23 @@
   @media (min-width:320px)  {
     width: 180px;
     font-size: 0.55rem;
-    /* smartphones, iPhone, portrait 480x320 phones */ }
-  @media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+  }
+  @media (min-width:481px)  {
+    width: 120px;
+    font-size: 0.55rem;
+  }
   @media (min-width:641px)  {
     width: 195px;
     font-size: 0.65rem;
   }
-  @media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-  @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+  @media (min-width:961px)  {
+    width: 130px;
+    font-size: 0.55rem;
+  }
+  @media (min-width:1025px) {
+    width: 130px;
+    font-size: 0.55rem;
+  }
 
   @media (min-width:1281px) {
     width: 243px;
