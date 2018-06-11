@@ -1,6 +1,6 @@
 FROM node:9-alpine
 
-EXPOSE 4200
+EXPOSE 8000
 
 # install angular-cli as node user
 RUN chown -R node:node /usr/local/lib/node_modules \
@@ -21,5 +21,11 @@ WORKDIR /home/dev
 
 COPY ./ /home/dev/
 
-CMD ng serve --host 0.0.0.0
+RUN npm install
+
+RUN npm install node-sass@latest
+
+RUN npm run build
+
+CMD npm start  -- --port=8000 --host 0.0.0.0
 
