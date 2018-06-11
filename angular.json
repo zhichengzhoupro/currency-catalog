@@ -3,17 +3,21 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "kata-project": {
+    "currency-catalog": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/kata-project",
+            "outputPath": "dist/currency-catalog",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,7 +27,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -50,18 +55,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "kata-project:build"
+            "browserTarget": "currency-catalog:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "kata-project:build:production"
+              "browserTarget": "currency-catalog:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "kata-project:build"
+            "browserTarget": "currency-catalog:build"
           }
         },
         "test": {
@@ -95,7 +100,7 @@
         }
       }
     },
-    "kata-project-e2e": {
+    "currency-catalog-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +108,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "kata-project:serve"
+            "devServerTarget": "currency-catalog:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "kata-project:serve:production"
+              "devServerTarget": "currency-catalog:serve:production"
             }
           }
         },
@@ -123,5 +128,5 @@
       }
     }
   },
-  "defaultProject": "kata-project"
+  "defaultProject": "currency-catalog"
 }
