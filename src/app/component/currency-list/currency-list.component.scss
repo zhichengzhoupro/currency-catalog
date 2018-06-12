@@ -1,6 +1,11 @@
 .list-inline-item-currency {
 
   border: 1px solid;
+  text-decoration: underline;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   @media (min-width:320px)  {
     width: 180px;
