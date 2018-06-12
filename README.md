@@ -2,7 +2,7 @@
 
 ## docker-compose startup
 
-Run `docker-compose up` ,  Navigate to "http://localhost" , the application is accessible.
+Run `docker-compose up  --build` ,  Navigate to "http://localhost" , the application is accessible.
 
 ## Development server
 
