@@ -13,22 +13,18 @@ RUN npm install -g @angular/cli@6.0.8
 USER root
 RUN ng set --global packageManager=npm
 
-# install chromium for headless browser tests
-ENV CHROME_BIN=/usr/bin/chromium-browser
-RUN apk add --no-cache chromium udev ttf-freefont
+RUN npm i npm@latest -g
 
 
 WORKDIR /home/dev
 
 COPY ./ /home/dev/
 
-RUN rm -rf node_modules
-
 RUN npm install
 
-RUN npm install node-sass@latest
+RUN npm rebuild node-sass
 
 RUN npm run build
 
-CMD npm start  -- --port=8000 --host 0.0.0.0
+CMD ng serve --host 0.0.0.0 --port 8000
 
