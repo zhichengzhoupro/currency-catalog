@@ -17,9 +17,12 @@ RUN ng set --global packageManager=npm
 ENV CHROME_BIN=/usr/bin/chromium-browser
 RUN apk add --no-cache chromium udev ttf-freefont
 
+
 WORKDIR /home/dev
 
 COPY ./ /home/dev/
+
+RUN rm -rf node_modules
 
 RUN npm install
 
