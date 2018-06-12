@@ -1,0 +1,48 @@
+.list-inline-item-currency {
+  border: 1px solid;
+  text-decoration: underline;
+}
+.list-inline-item-currency:hover {
+  cursor: pointer;
+}
+@media (min-width: 320px) {
+  .list-inline-item-currency {
+    width: 180px;
+    font-size: 0.55rem;
+  }
+}
+@media (min-width: 481px) {
+  .list-inline-item-currency {
+    width: 120px;
+    font-size: 0.55rem;
+  }
+}
+@media (min-width: 641px) {
+  .list-inline-item-currency {
+    width: 175px;
+    font-size: 0.5rem;
+  }
+}
+@media (min-width: 961px) {
+  .list-inline-item-currency {
+    width: 240px;
+    font-size: 0.65rem;
+  }
+}
+@media (min-width: 1025px) {
+  .list-inline-item-currency {
+    width: 130px;
+    font-size: 0.55rem;
+  }
+}
+@media (min-width: 1281px) {
+  .list-inline-item-currency {
+    width: 243px;
+    font-size: 0.75rem;
+  }
+}
+
+.result-row {
+  margin-top: 2%;
+  margin-bottom: 1%;
+}

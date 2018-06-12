@@ -6,7 +6,7 @@ import {forkJoin} from 'rxjs/index';
 @Component({
   selector: 'app-currency-list',
   templateUrl: './currency-list.component.html',
-  styleUrls: ['./currency-list.component.scss']
+  styleUrls: ['./currency-list.component.css']
 })
 export class CurrencyListComponent implements OnInit {
 

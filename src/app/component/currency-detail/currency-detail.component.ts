@@ -7,7 +7,7 @@ import {Location} from '@angular/common';
 @Component({
   selector: 'app-currency-detail',
   templateUrl: './currency-detail.component.html',
-  styleUrls: ['./currency-detail.component.scss']
+  styleUrls: ['./currency-detail.component.css']
 })
 export class CurrencyDetailComponent implements OnInit {
 
